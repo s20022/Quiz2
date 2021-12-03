@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Quiz_app2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="tv_quiz_title">Quiz</string>
+    <string name="bt_quiz_start">START</string>
+    <string name="bt_answer_text">ここにJsonのテキストを挿入</string>
+    <string name="tv_quizmain_text">ここにJsonのクエスチョンを挿入</string>
+    <string name="tv_cleartime">CLEAR TIME:</string>
+    <string name="tv_answer_result">RESULT:</string>
+    <string name="bt_back">Return to title</string>
+    <string name="tv_time">0:00</string>
+    <string name="tv_result">0</string>
+    <string name="time_format" translatable="false">%1$01d:%2$02d.%3$02d</string>
+    <string name="point_format" translatable="false">%1$d</string>
+</resources>

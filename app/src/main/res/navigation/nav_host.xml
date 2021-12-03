@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/quizTitleFragment">
+
+
+    <fragment
+        android:id="@+id/quizTitleFragment"
+        android:name="jp.ac.it_college.std.s20022.quiz_app2.QuizTitleFragment"
+        android:label="fragment_quiz_title"
+        tools:layout="@layout/fragment_quiz_title" >
+        <action
+            android:id="@+id/action_to_main"
+            app:destination="@id/quizMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizMainFragment"
+        android:name="jp.ac.it_college.std.s20022.quiz_app2.QuizMainFragment"
+        android:label="fragment_quiz_main"
+        tools:layout="@layout/fragment_quiz_main" >
+        <action
+            android:id="@+id/action_to_result"
+            app:destination="@id/quizResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizResultFragment"
+        android:name="jp.ac.it_college.std.s20022.quiz_app2.QuizResultFragment"
+        android:label="fragment_quiz_result"
+        tools:layout="@layout/fragment_quiz_result" >
+        <action
+            android:id="@+id/action_to_title"
+            app:destination="@id/quizTitleFragment" />
+        <argument
+            android:name="correctCount"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument android:name="totalElapsedTime"
+            app:argType="long"
+            android:defaultValue="0L"/>
+    </fragment>
+</navigation>

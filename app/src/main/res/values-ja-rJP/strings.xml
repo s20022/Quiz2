@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">クイズアプリ2</string>
+    <string name="tv_quiz_title">Quiz</string>
+    <string name="bt_quiz_start">START</string>
+    <string name="bt_answer_text">ここにJsonのテキストを挿入</string>
+    <string name="tv_quizmain_text">ここにJsonのクエスチョンを挿入</string>
+    <string name="tv_cleartime">クリアタイム:</string>
+    <string name="tv_answer_result">正解数:</string>
+    <string name="bt_back">タイトルに戻る</string>
+    <string name="tv_time">0:00</string>
+    <string name="tv_result">0</string>
+</resources>
