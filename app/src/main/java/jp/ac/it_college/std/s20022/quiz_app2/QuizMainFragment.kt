@@ -45,7 +45,8 @@ class QuizMainFragment : Fragment() {
     private var totalElapsedTime = 0L
     private var correctCount = 0
     private val currentElapsedTime get() = SystemClock.elapsedRealtime() - startTime
-    private var quizList: MutableList<MutableMap<String,String>> = mutableListOf()
+    //private var quizList: MutableList<MutableMap<String,String>> = mutableListOf()
+
 
 
     override fun onResume() {
@@ -117,6 +118,28 @@ class QuizMainFragment : Fragment() {
     private fun getDataPost(result: String) {
         val rootData = JSONArray(result)
         binding.tvQuizmain.text = rootData.getJSONObject(0).getString("question")
+    }
+
+    @UiThread
+    private fun getChoices(result: String) {
+        val choiceData = JSONArray(result)
+        val choice2 = JSONObject(result).getString("answers")
+        binding.btAnswer1.text = choiceData.getJSONObject(0).getString("choices")
+        binding.btAnswer2.text = choiceData.getJSONObject(1).getString("choices")
+        binding.btAnswer3.text = choiceData.getJSONObject(2).getString("choices")
+        binding.btAnswer4.text = choiceData.getJSONObject(3).getString("choices")
+
+        if (choice2 == "2") {
+            binding.btAnswer1.text = choiceData.getJSONObject(0).getString("choices")
+            binding.btAnswer2.text = choiceData.getJSONObject(1).getString("choices")
+            binding.btAnswer3.text = choiceData.getJSONObject(2).getString("choices")
+            binding.btAnswer4.text = choiceData.getJSONObject(3).getString("choices")
+            binding.btHidde1.visibility = View.GONE
+            binding.btHidde2.visibility = View.GONE
+            binding.btHidde1.text = choiceData.getJSONObject(4).getString("choices")
+            binding.btHidde2.text = choiceData.getJSONObject(5).getString("choices")
+
+        }
     }
 
 
@@ -258,6 +281,7 @@ class QuizMainFragment : Fragment() {
     /**
      * 指定の番号で、各ビューに問題データをセットするメソッド
      */
+
     private fun setQuiz(position: Int) {
         binding.tvQuizmain.text = quizList[position].question
 
@@ -268,7 +292,6 @@ class QuizMainFragment : Fragment() {
         binding.btAnswer3.text = randomChoice[2]
         binding.btAnswer4.text = randomChoice[3]
     }
-
 
 
 }
